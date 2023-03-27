@@ -9,8 +9,8 @@ export default class QueryBuilder {
         this.options = options || {}
     }
 
-    find () {
-
+    find() {
+        
     }
 
     aggregation () {
