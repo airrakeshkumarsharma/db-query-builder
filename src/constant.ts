@@ -5,7 +5,8 @@ export const  DATABASE = {
 export const DATA_TYPE = {
     DATE: "DATE",
     NUMBER: "NUMBER",
-    ID: "ID"
+    ID: "ID",
+    CUSTOM: "CUSTOM"
 }
 
 export const OPERATION_TYPE = {

@@ -10,7 +10,9 @@ type operationType  = keyof typeof OPERATION_TYPE
 
 export interface IQueryOption {
     key: string
-    value: string | number[] | Date[]
+    value: string | string[] | number[]
+    lowerValue?: number | Date
+    upperValue?: number | Date
     dataTypes?: dataTypes
     operations?: operationType
 }
@@ -45,4 +47,4 @@ const fu = (d: IQuery) => {
 
 }
 
-// fu({filter: [{dataTypes: "date"}]})
+fu({filter: [{dataTypes: "NUMBER", value: "d", key: "some" }]})
