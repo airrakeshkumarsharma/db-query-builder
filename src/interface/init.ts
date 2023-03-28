@@ -1,20 +1,48 @@
-export interface IOptions {}
+import { DATABASE, DATA_TYPE, OPERATION_TYPE } from "../constant"
 
+export type DB_ENUMS = keyof typeof DATABASE
 
-type operationType  = "$and" | "$or"
-type dataTypes = "id" | "date" | "number"
+export interface IOptions {
+}
 
-interface filterOptions {
+type dataTypes = keyof typeof DATA_TYPE
+type operationType  = keyof typeof OPERATION_TYPE
+
+export interface IQueryOption {
     key: string
     value: string | number[] | Date[]
     dataTypes?: dataTypes
     operations?: operationType
 }
 
-export interface findQuery {
-    filter: filterOptions | filterOptions[]
+interface ISort {
+    key: string
+    order: -1 | 1
 }
 
-export enum DB_ENUMS {
-    MONGODB = "MONGODB"
+interface IPagination {
+    perPage: number & { minLength: 0; }
+    pageNumber: number & { minLength: 0; }
 }
+
+interface IProject {
+    [key: string]: 1 | 0
+}
+
+export interface IQuery {
+    filter?: IQueryOption[]
+
+    search?: IQueryOption[]
+
+    sort?: ISort[]
+
+    project?: IProject
+
+    pagination?: IPagination
+}
+
+const fu = (d: IQuery) => {
+
+}
+
+// fu({filter: [{dataTypes: "date"}]})

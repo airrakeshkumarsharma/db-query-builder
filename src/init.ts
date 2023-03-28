@@ -1,4 +1,4 @@
-import { DB_ENUMS, IOptions } from "./interface/init";
+import { DB_ENUMS, IOptions, IQuery } from "./interface/init";
 
 export default class QueryBuilder {
     dbName: string
@@ -9,7 +9,7 @@ export default class QueryBuilder {
         this.options = options || {}
     }
 
-    find() {
+    find(query: IQuery) {
         
     }
 
