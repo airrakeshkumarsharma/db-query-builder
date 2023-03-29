@@ -45,8 +45,11 @@
     ],
     "devDependencies": {
         "@size-limit/preset-small-lib": "^8.2.4",
+        "@types/jest": "^27.5.2",
         "husky": "^8.0.3",
+        "jest": "^25.5.4",
         "size-limit": "^8.2.4",
+        "ts-jest": "25.4",
         "tsdx": "^0.14.1",
         "tslib": "^2.5.0",
         "typescript": "^3.9.10"

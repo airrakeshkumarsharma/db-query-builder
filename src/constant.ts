@@ -6,7 +6,9 @@ export const DATA_TYPE = {
     DATE: "DATE",
     NUMBER: "NUMBER",
     ID: "ID",
-    CUSTOM: "CUSTOM"
+    CUSTOM: "CUSTOM",
+    STRING: "STRING",
+    BOOL: "BOOL"
 }
 
 export const OPERATION_TYPE = {

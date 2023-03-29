@@ -10,10 +10,10 @@ type operationType  = keyof typeof OPERATION_TYPE
 
 export interface IQueryOption {
     key: string
-    value: string | string[] | number[]
+    value?: string | string[] | number[]
     lowerValue?: number | Date
     upperValue?: number | Date
-    dataTypes?: dataTypes
+    dataTypes: dataTypes
     operations?: operationType
 }
 
