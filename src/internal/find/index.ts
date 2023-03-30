@@ -1,17 +1,21 @@
 import { DATA_TYPE, OPERATION_TYPE } from "../../constant";
 import { IQueryOption } from "../../interface/init"
+import { applyBoolFilter } from "../common/boolFilter";
 import { applyCustomFilter } from "../common/customFilter";
 import { applyDateFilter } from "../common/dateFilter";
 import { applyNumberFilter } from "../common/numberFilter";
 import { applyIdFilter } from "../common/objectIdFilter";
+import { applyStringFilter } from "../common/stringFilter";
 
 
-const { DATE, NUMBER, CUSTOM, ID } = DATA_TYPE
+const { DATE, NUMBER, CUSTOM, ID, STRING, BOOL } = DATA_TYPE
 
 const filterFunctionMapper = {
     [DATE]: applyDateFilter,
     [NUMBER]: applyNumberFilter,
     [ID]: applyIdFilter,
+    [STRING]: applyStringFilter,
+    [BOOL]: applyBoolFilter,
     [CUSTOM]: applyCustomFilter
 }
 
