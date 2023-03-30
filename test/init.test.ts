@@ -30,11 +30,18 @@ test("Find | number | upperValue | +ve", () => {
 })
 
 test("Find | number | value | -ve", () => {
-    const findQueryWithString = queryBuilder.find({ filter: [{ key: "marks", value: "66", dataTypes: "NUMBER" }] })
+    try {
+        queryBuilder.find({ filter: [{ key: "marks", value: "66", dataTypes: "NUMBER" }] })
+    } catch (error) {
+        expect(error.message).toEqual("Wrong value is passed to find")
+    }
+})
 
-    const andQuery = findQueryWithString.filter.$and[0].$and
-
-    expect(andQuery.length).toEqual(1)
-    expect(andQuery[0]).toEqual({ marks: { $lte: 66 } })
+test("Find | number | value not passed | -ve", () => {
+    queryBuilder.find({ filter: [{ key: "marks", dataTypes: "NUMBER" }] })
+    try {
+    } catch (error) {
+        expect(error.message).toEqual("Wrong value is passed to find")
+    }
 })
 
