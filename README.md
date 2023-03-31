@@ -5,15 +5,15 @@
 - Step 1: Install the query builder library
   
    ```bash
-   npm install query-builder
+   npm i build-query   
    ```
 - Step 2: Create instance of the query builder library
    ```js
-    const queryBuilder = new QueryBuilder("MONGO") //Here mongo is passed to queryBuilder because query builder will use the mongo database.
+    const buildQuery = new BuildQuery("MONGO") //Here mongo is passed to queryBuilder because query builder will use the mongo database.
 
     const filter = []
     filter.push({{ key: "marks", lowerValue: 66, upperValue: 99, dataTypes: "NUMBER" }})
-    const queryBuilderOutput =  queryBuilder.find(filter)
+    const queryBuilderOutput =  buildQuery.find(filter)
 
     // Customize the query if necessary otherwise pass it to mongo model 
     ```
