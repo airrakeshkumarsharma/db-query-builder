@@ -42,9 +42,3 @@ export interface IQuery {
 
     pagination?: IPagination
 }
-
-const fu = (d: IQuery) => {
-
-}
-
-fu({filter: [{dataTypes: "NUMBER", value: "d", key: "some" }]})

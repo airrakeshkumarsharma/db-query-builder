@@ -1,7 +1,7 @@
 import { DB_ENUMS, IOptions, IQuery } from "./interface/init";
 import { filterQueryBuilder } from "./internal/find";
 
-export default class QueryBuilder {
+export default class BuildQuery {
     dbName: string
     options: IOptions
 
@@ -15,9 +15,5 @@ export default class QueryBuilder {
         if(query.filter) buildQuery.filter = filterQueryBuilder(query.filter)
 
         return buildQuery
-    }
-
-    aggregation () {
-
     }
 }

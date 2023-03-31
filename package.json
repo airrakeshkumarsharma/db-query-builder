@@ -30,7 +30,7 @@
         "singleQuote": true,
         "trailingComma": "es5"
     },
-    "name": "mongo-query-builder",
+    "name": "build-query",
     "author": "Rakesh",
     "module": "dist/mongo-query-builder.esm.js",
     "size-limit": [
@@ -46,6 +46,12 @@
     "devDependencies": {
         "@size-limit/preset-small-lib": "^8.2.4",
         "@types/jest": "^27.5.2",
+        "@typescript-eslint/eslint-plugin": "^5.57.0",
+        "eslint": "^8.37.0",
+        "eslint-config-standard-with-typescript": "^34.0.1",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-n": "^15.7.0",
+        "eslint-plugin-promise": "^6.1.1",
         "husky": "^8.0.3",
         "jest": "^25.5.4",
         "size-limit": "^8.2.4",
@@ -53,8 +59,5 @@
         "tsdx": "^0.14.1",
         "tslib": "^2.5.0",
         "typescript": "^3.9.10"
-    },
-    "dependencies": {
-        "mongoose": "^7.0.2"
     }
 }

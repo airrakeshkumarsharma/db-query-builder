@@ -1,7 +1,7 @@
-import QueryBuilder from "../src/init"
+import BuildQuery from "../src/init"
 import { IQueryOption } from "../src/interface/init"
 
-const queryBuilder = new QueryBuilder("MONGO")
+const queryBuilder = new BuildQuery("MONGO")
 
 test("Find | number | lower & upper | +ve", () => {
     const findQueryWithString = queryBuilder.find({ filter: [{ key: "marks", lowerValue: 66, upperValue: 99, dataTypes: "NUMBER" }] })
