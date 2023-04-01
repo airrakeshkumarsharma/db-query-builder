@@ -1,5 +1,5 @@
-import BuildQuery from "../src/init"
-import { IQueryOption } from "../src/interface/init"
+import BuildQuery from "../src"
+import { IQueryOptions } from "../src"
 
 const queryBuilder = new BuildQuery("MONGO")
 
@@ -49,7 +49,7 @@ test("Find | number | value not passed | -ve", () => {
 
 
 test("Find | string | value | +ve", () => {
-    const filter: IQueryOption[] = []
+    const filter: IQueryOptions = []
     filter.push({ key: "name", value: "rohit", dataTypes: "STRING" })
     filter.push({ key: "class", value: "matric", dataTypes: "STRING" })
     const findQueryWithString = queryBuilder.find({ filter })
@@ -62,7 +62,7 @@ test("Find | string | value | +ve", () => {
 })
 
 test("Find | string | lower & upper | -ve", () => {
-    const filter: IQueryOption[] = []
+    const filter: IQueryOptions = []
     filter.push({ key: "name", lowerValue: 1, dataTypes: "STRING" })
     filter.push({ key: "class", value: "matric", dataTypes: "STRING" })
 
@@ -75,7 +75,7 @@ test("Find | string | lower & upper | -ve", () => {
 
 
 test("Find | Date | upper & lower | +ve", () => {
-    const filter: IQueryOption[] = []
+    const filter: IQueryOptions = []
     const date = new Date()
     filter.push({ key: "createdAt", lowerValue: date, dataTypes: "DATE" })
     filter.push({ key: "class", value: "matric", dataTypes: "STRING" })
@@ -91,7 +91,7 @@ test("Find | Date | upper & lower | +ve", () => {
 
 // Combination of all
 test("Find | Date, number, string, bool | upper & lower | +ve", () => {
-    const filter: IQueryOption[] = []
+    const filter: IQueryOptions = []
     const date = new Date()
     filter.push({ key: "createdAt", lowerValue: date, dataTypes: "DATE" })
     filter.push({ key: "class", value: "matric", dataTypes: "STRING" })

@@ -17,26 +17,30 @@ export interface IQueryOption {
     operations?: operationType
 }
 
-interface ISort {
+export interface IQueryOptions extends Array<IQueryOption> {}
+
+export interface ISortOption {
     key: string
     order: -1 | 1
 }
 
-interface IPagination {
+export interface ISortOptions extends Array<ISortOption> {}
+
+export interface IPagination {
     perPage: number & { minLength: 0; }
     pageNumber: number & { minLength: 0; }
 }
 
-interface IProject {
+export interface IProject {
     [key: string]: 1 | 0
 }
 
 export interface IQuery {
-    filter?: IQueryOption[]
+    filter?: IQueryOptions
 
-    search?: IQueryOption[]
+    search?: IQueryOptions
 
-    sort?: ISort[]
+    sort?: ISortOptions
 
     project?: IProject
 
