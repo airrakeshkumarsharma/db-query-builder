@@ -1,0 +1,1 @@
+export interface IFind  { $and: [{ $or: any[], $and: any[] }] }

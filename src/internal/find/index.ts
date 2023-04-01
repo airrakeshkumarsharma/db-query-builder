@@ -1,4 +1,5 @@
 import { DATA_TYPE, OPERATION_TYPE } from "../../constant";
+import { IFind } from "../../interface/find";
 import { IQueryOption } from "../../interface/init"
 import { applyBoolFilter } from "../common/boolFilter";
 import { applyCustomFilter } from "../common/customFilter";
@@ -20,7 +21,7 @@ const filterFunctionMapper = {
 }
 
 export const filterQueryBuilder = (filters: IQueryOption[]) => {
-    const query: { $and: [{ $or: any[], $and: any[] }] } = { $and: [{ $or: [], $and: [] }] }
+    const query: IFind = { $and: [{ $or: [], $and: [] }] }
 
     for (let index = 0; index < filters.length; index++) {
         const filter = filters[index];
